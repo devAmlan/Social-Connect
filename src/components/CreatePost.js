@@ -4,6 +4,7 @@ import { MdAddPhotoAlternate } from 'react-icons/md'
 import { db,storage } from '../config/firebase'
 import getRandomnum  from '../random'
 import firebase from 'firebase';
+
 import './CreatePost.css'
 const CreatePost = () => {
   const [user,] =  useContext(AuthContext).user;
@@ -43,9 +44,9 @@ const CreatePost = () => {
                   username:user.displayName
                 })
              })
+             setCaption("")  
+             document.getElementById('image-preview').src = null;
           })
-          setCaption("")  
-          document.getElementById('image-preview').src = null;
 
         }
 
@@ -53,7 +54,7 @@ const CreatePost = () => {
     return ( 
         <>
         <div className="create-post">
-        <p>Create Your Post</p>
+        <h3>Create Your Post</h3>
         <textarea className="textpost" 
         placeholder="Enter Captions"
         value={caption}
@@ -73,7 +74,7 @@ const CreatePost = () => {
         onChange={handleChange}/>
         </div>
         <button className="uploadbtn" onClick={handleUpload}>
-          {(progress === 0)?null :progress+"%"} Upload</button>
+        {(progress === 0)?null :progress+"%"} Upload</button>
         </div>
         </>
      );

@@ -1,0 +1,23 @@
+.userdata{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#F78812;
+    height:250px;
+}
+.profile-picture{
+   width:150px;
+   height:150px;
+   border:none;
+   border-radius:50%; 
+}
+.profilearea{
+    margin-top:70px;
+    text-align: center;
+    color:#F5F5F5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,82 @@
+.post{
+   width:500px;
+   min-height:480px; 
+   background-color: #B980F0;
+   border:none;
+   border-radius:5px;
+   margin:5px;
+}
+.postheader{
+   display:flex;
+}
+.post_profilepic{
+   width:50px;
+   height:50px;
+   border:none;
+   border-radius:50%;
+   margin:5px;
+}
+.post_image{
+   height:300px;
+   border:none;
+   margin:5px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+}
+.post_image img{
+   width:100%;
+   height:300px;
+}
+.post_username{
+   color:#F5F5F5;
+   font-family:inherit;
+   font-size:17px;
+   font-weight:bold;
+}
+.post_caption{
+   margin-left:10px;
+}
+.post_addcomments{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:10px;
+}
+.post_addcomments textarea{
+ width:300px;
+ height:29px; 
+ margin:10px;
+ border:none;
+ border-radius:7px;
+ outline:none;
+ padding:5px;
+ font-family:inherit;
+ font-size:14px;
+ background-color:#F5F5F5;
+}
+.post_addcomments button{
+   width:80px;
+   height:33px;
+   border:none;
+   border-radius:7px;
+   cursor: pointer;
+   font-family:inherit;
+   font-size:16px;
+   background-color:#F78812;
+}
+.likebtn{
+   font-size:30px;
+   color:#F78812;
+   margin:10px;
+}
+.commentbtn{
+   font-size:30px;
+   color:#F78812;
+   margin:10px;
+}
+@media only screen and (max-width: 600px) {
+   .post{
+      width:90%;
+   }
+}
