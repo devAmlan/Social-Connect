@@ -4,8 +4,24 @@ import  Comment  from '../components/Comment';
 import './Post.css'
 import {IoHeart} from 'react-icons/io5'
 import {CgComment} from 'react-icons/cg'
-const Post = ({id,caption,username,photopost,profileImage,comments}) => {
+import {db} from '../config/firebase'
+
+const Post = ({id,caption,username,photopost,profileImage,comments,postlikes}) => {
     const [showcomment, setShowcomment] = useState(false)
+    const [like,setLike] =  useState(false)
+    const likePost = ()=>{
+      (like===false)?setLike(true):setLike(false)
+      if(like===true){
+        db.collection("posts").doc(id).update({
+            likes:postlikes-1
+           }).then().catch((err)=>{console.log(err)})
+      }else{
+        db.collection("posts").doc(id).update({
+            likes:postlikes+1
+        }).then().catch((err)=>{console.log(err)})
+      }
+      
+    }
     const showComments = ()=>{
         (showcomment===false)?setShowcomment(true):setShowcomment(false)
     }
@@ -20,8 +36,13 @@ const Post = ({id,caption,username,photopost,profileImage,comments}) => {
             <img src={photopost} alt="" />
         </div>
         <h4 className="post_caption">{caption}</h4>
-        <IoHeart className="likebtn"/>
+        <div className="post_reactions">
+        <p className="likenumbers">
+            {postlikes}
+        </p>
+        <IoHeart className="likebtn" onClick={likePost}/>
         <CgComment className="commentbtn" onClick={showComments}/>
+        </div>
         {
          (showcomment===true)?
          <>

@@ -30,6 +30,7 @@ const PostArea = () => {
                    photopost = {post.photopost}
                    id={id}
                    comments ={post.comments}
+                   postlikes = {post.likes}
                    />
                )
            })  

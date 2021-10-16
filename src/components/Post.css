@@ -65,15 +65,24 @@
    font-size:16px;
    background-color:#F78812;
 }
+.post_reactions{
+   display:flex;
+}
+.likenumbers{
+   margin:10px 8px;
+   font-size:20px;
+}
 .likebtn{
    font-size:30px;
-   color:#F78812;
+   color:#7027A0;
    margin:10px;
+   cursor: pointer;
 }
 .commentbtn{
    font-size:30px;
-   color:#F78812;
+   color:#7027A0;
    margin:10px;
+   cursor: pointer;
 }
 @media only screen and (max-width: 600px) {
    .post{

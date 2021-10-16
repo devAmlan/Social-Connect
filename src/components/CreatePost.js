@@ -41,7 +41,8 @@ const CreatePost = () => {
                   photopost:imageUrl,
                   profileUrl:user.photoURL,
                   timestamp:firebase.firestore.FieldValue.serverTimestamp(),
-                  username:user.displayName
+                  username:user.displayName,
+                  likes:0
                 })
              })
              setCaption("")  
